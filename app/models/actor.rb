@@ -23,8 +23,11 @@ class Actor < ApplicationRecord
   #   return the_many
   # end
 
-  has_many(:filmography, class_name: "Character", foreign_key: "movie_id")
-  
+  has_many(:filmography,
+    through: :characters,
+    source: :movie
+  )
+
   # def filmography
   #   the_many = Array.new
 
